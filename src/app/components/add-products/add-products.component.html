@@ -1,0 +1,52 @@
+<div class="row mt-4">
+  <div class="col-md-8 mx-auto">
+      <div class="card">
+          <div class="card-header">
+              <h5>Agregar producto al catálogo</h5>
+          </div>
+          <div class="card-body">
+            <form #frmProducto="ngForm" (ngSubmit)="createProduct(frmProducto)"  enctype="multipart/form-data">
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    </div>
+                    <input type="text" name="name" class="form-control" placeholder="Nombre del producto" ngModel required>
+                </div>
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    </div>
+                    <input type="number" name="price" class="form-control" placeholder="Precio del producto" ngModel required>
+                </div>
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    </div>
+                    <input type="number" name="discount" class="form-control" placeholder="¿Tiene Descuento? Si deja vacío es $0" ngModel required>
+                </div>
+                <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input type="number" name="quanty" class="form-control" placeholder="Cantidad en stock..." ngModel required>
+                    </div>
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    </div>
+                    <textarea name="description" class="form-control" placeholder="Descripcion del producto..." ngModel required></textarea>
+                </div>
+
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    </div>
+                    <input type="file" name="img" (change)="handleFileInput($event.target.files)" class="form-control" placeholder="Imagen del producto..." ngModel required>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+            </form>
+          </div>
+        </div>
+  </div>
+</div>

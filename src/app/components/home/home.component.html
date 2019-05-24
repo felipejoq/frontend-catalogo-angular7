@@ -1,0 +1,28 @@
+<div *ngIf="listaProducts" class="card-columns mt-4">
+    <div *ngFor="let product of listaProducts.products">
+            <div *ngIf="product.status" class="card">
+              <img class="card-img-top" src="http://localhost:3000/api/image/products/{{product.img}}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">
+                  {{ product.description }}
+                </p>
+                <p class="card-text">
+                  <small class="text-muted">Precio: {{ product.final_price }}</small>
+                  <small class="text-muted">| Stock: {{ product.quanty }}</small>
+                </p>
+              </div>
+            </div>
+  </div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-6 d-flex justify-content-start">
+      <button [disabled]="noMore ? true : null" (click)="afterPage()" class="btn btn-primary">Anterior</button>
+    </div>
+    <div class="col-md-6 d-flex justify-content-end">
+        <button [disabled]="hasMore ? true : null" (click)="nextPage()" type="button" class="btn btn-primary">Siguiente</button>
+    </div>
+  </div>
+
